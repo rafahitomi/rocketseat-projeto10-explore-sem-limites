@@ -3,9 +3,11 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  font-family: 'Mulish', sans-serif; /* 600, 700 e 900 */
+
+  font-family: 'Mulish', sans-serif;
 }
 
 :root {
@@ -13,56 +15,21 @@
 
   --accent-color: #B52184;
   --text-base-color: #312D64;
-  --linear-gradient: #;
+  --white: #FFFFFF;
 }
 
 body {
-  font-family: 'Mulish', sans-serif;
   background: #F9F4FB;
 }
 
-img {
-  width: 100%;
-  display: block;
-}
-
-h1 {
-  font-weight: 900;
-  font-size: 3.2rem;
-  color: var(--accent-color);
-  line-height: 4.0rem;
-
-  margin: 1.7rem auto 0.5rem;
-}
-
-p {
-  font-weight: 600;
-  font-size: 1.6rem;
-  color: var(--text-base-color);
-  line-height: 2.0rem;
-}
-
-h2 {
-  font-weight: 900;
-  font-size: 3.2rem;
-  color: var(--accent-color);
-  line-height: 4.0rem;
-
-  margin-bottom: 4.3rem;
-}
-
-h3 {
-  font-weight: 900;
-  font-size: 2.9rem;
-  color: var(--accent-color);
-  line-height: 3.7rem;
-}
-
-button, input, fieldset, textarea {
+button,
+input,
+fieldset,
+textarea {
   border: none;
   background: none;
-  font-family: 'Mulish', sans-serif;;
 }
+
 
 /* Hero Section */
 #hero {
@@ -71,11 +38,25 @@ button, input, fieldset, textarea {
   text-align: center;
 }
 
+#hero .astronaut img { 
+  width: 100%;
+  display: block;
+}
+
+#hero .hero-text h1 {
+  font-weight: 900;
+  font-size: 3.2rem;
+  line-height: 4.0rem;
+  color: var(--accent-color);
+
+  margin: 1.7rem auto 0.5rem;
+}
+
 #hero .hero-text p {
   font-weight: 600;
   font-size: 2.0rem;
-  color: var(--text-base-color);
   line-height: 2.5rem;
+  color: var(--text-base-color);
 
   margin-bottom: 3.5rem;
 }
@@ -104,11 +85,62 @@ button, input, fieldset, textarea {
   width: 3rem;
 }
 
+
 /* Cards Section */
+#cards {
+  padding: 5.3rem 3.9rem;
+
+  background: linear-gradient(96.21deg, #343193 0%, #302C63 99.68%);
+
+  display: flex;
+  flex-direction: column;
+  gap: 5rem;
+}
+
+#cards .card {
+  background: var(--white);
+  border-radius: 2rem;
+
+  padding: 2.6rem;
+}
+
+#cards .card img {
+  margin-bottom: 3.3rem;
+}
+
+#cards .card-text {
+  width: 26.5rem;
+}
+
+#cards .card-text h3 {
+  font-weight: 900;
+  font-size: 3rem;
+  line-height: 3.7rem;
+  color: var(--accent-color);
+
+  margin-bottom: 2rem;
+}
+
+#cards .card-text p {
+  font-weight: 600;
+  font-size: 1.6rem;
+  line-height: 2rem;
+  color: var(--text-base-color);
+}
+
 
 /* Contact Section */
 #contact {
   padding: 7.8rem 3.9rem 6.5rem;
+}
+
+#contact form h2 {
+  font-weight: 900;
+  font-size: 3.2rem;
+  line-height: 4.0rem;
+  color: var(--accent-color);
+
+  margin-bottom: 4.3rem;
 }
 
 #contact form .input-wrapper {
@@ -117,39 +149,54 @@ button, input, fieldset, textarea {
 
 #contact form input,
 #contact form textarea {
-  width: 100%;
   border: 0.15rem solid var(--text-base-color);
   border-radius: 1.6rem;
-  padding: 1.2rem 1.6rem 1.4rem;
 
-  color: #312D64;
+  width: 100%;
+  padding: 1.6rem;
+
+  font-weight: 600;
+  font-size: 1.6rem;
+  
+  font-weight: 600;
   font-size: 1.6rem;
   line-height: 1.6rem;
-  font-weight: 600;
+  color: var(--text-base-color);
 }
 
-#contact form input::placeholder,
-#contact form textarea::placeholder {
-  color: #312D64;
-}
-
-#contact form input::placeholder {
-  padding-left: 3.6rem;
+#contact form input {
+  padding-left: 5rem;
 }
 
 #contact form textarea {
   height: 12.6rem;
   resize: none;
+  line-height: 2rem;
 }
 
+#contact form input::placeholder,
+#contact form textarea::placeholder {
+  color: var(--text-base-color);
+}
+
+#name {
+  background: url(./images/person.svg) no-repeat 1.4rem 1.2rem;
+}
+
+#email {
+  background: url(./images/email.svg) no-repeat 1.4rem 1.2rem;
+}
+
+
 #contact form button {
-  background: var(--linear-gradient);
-  padding: 1.6rem;
+  background: linear-gradient(96.21deg, #343193 0%, #302C63 99.68%);
   border-radius: 1.6rem;
+  padding: 1.05rem 1.6rem;
+
+  font-weight: 700;
   font-size: 1.4rem;
   line-height: 2.4rem;
-  font-weight: 700;
-  color: #FFFFFF;
+  color: var(--white);
 
   transition: filter 300ms;
 }
@@ -158,17 +205,6 @@ button, input, fieldset, textarea {
   filter: brightness(0.9);
 }
 
-#name {
-  background: url(./images/person.svg);
-  background-repeat: no-repeat;
-  background-position: 1.4rem 1.2rem;
-}
-
-#email {
-  background: url(./images/email.svg);
-  background-repeat: no-repeat;
-  background-position: 1.4rem 1.2rem;
-}
 
 /* Footer Section */
 footer {
@@ -179,7 +215,10 @@ footer {
   font-weight: 600;
   font-size: 2rem;
   line-height: 2.4rem;
-  color: #FFFFFF;
-
+  
   text-align: center;
+}
+
+footer p {
+  color: var(--white);
 }
